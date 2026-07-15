@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolly Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background:
+                radial-gradient(circle at 50% 28%, rgba(154, 110, 255, .25), transparent 28%),
+                linear-gradient(135deg, #fbf9fd, #f4f1fb, #fbfafd);
+            overflow-x: hidden;
+        }
+
+        body:before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 18% 18%, rgba(255, 255, 255, .7), transparent 25%),
+                radial-gradient(circle at 82% 22%, rgba(255, 255, 255, .7), transparent 25%),
+                radial-gradient(circle at 50% 50%, rgba(168, 120, 255, .18), transparent 35%);
+            filter: blur(12px);
+        }
+
+        .wrapper {
+            width: 1280px;
+            max-width: 94%;
+            margin: auto
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 35px 0
+        }
+
+        .logo {
+            font-size: 58px;
+            font-weight: 900;
+            font-style: italic
+        }
+
+        nav {
+            display: flex;
+            gap: 34px;
+            background: #8457f7;
+            padding: 18px 38px;
+            border-radius: 40px;
+            box-shadow: 0 10px 25px rgba(132, 87, 247, .25)
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 15px
+        }
+
+        .cart-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700
+        }
+
+        .cart {
+            width: 56px;
+            height: 56px;
+            background: #e7ff35;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr 1fr;
+            align-items: center
+        }
+
+        .small {
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 10px
+        }
+
+        .small span {
+            background: #8457f7;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 14px
+        }
+
+        .big {
+            font-size: 105px;
+            font-weight: 900;
+            line-height: .86
+        }
+
+        .middle {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 650px;
+            perspective: 1200px;
+            z-index: 2
+        }
+
+        .middle:before {
+            content: "";
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(148, 96, 255, .28), transparent 70%);
+            filter: blur(20px)
+        }
+
+        #bottle {
+            width: 430px;
+            position: relative;
+            z-index: 3;
+            transform: rotate(-18deg);
+            filter: drop-shadow(0 40px 35px rgba(0, 0, 0, .22));
+            transition: transform .08s linear;
+            animation: float 5s ease-in-out infinite
+        }
+
+        @keyframes float {
+            50% {
+                transform: translateY(-15px) rotate(-16deg)
+            }
+        }
+
+        .right {
+            position: relative;
+            z-index: 5;
+            padding-left: 35px
+        }
+
+        .right h2 {
+            font-size: 50px;
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -1px;
+            color: #111
+        }
+
+        .right em {
+            font-style: italic;
+            font-weight: 900
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 38px;
+            background: #111;
+            color: #fff;
+            text-decoration: none;
+            padding: 18px 34px;
+            border-radius: 40px;
+            font-weight: 700
+        }
+
+        .arrow {
+            display: inline-flex;
+            width: 44px;
+            height: 44px;
+            background: #8457f7;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            margin-left: 10px
+        }
+
+        @media(max-width:900px) {
+
+            header,
+            .hero {
+                display: block;
+                text-align: center
+            }
+
+            nav {
+                display: none
+            }
+
+            .big {
+                font-size: 62px
+            }
+
+            #bottle {
+                width: 280px
+            }
+
+            .right {
+                padding-left: 0;
+                margin-top: 20px
+            }
+
+            .right h2 {
+                font-size: 34px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo">bolly</div>
+            <nav>
+                <a href="#">Shop +</a>
+                <a href="#">About</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="cart-area">
+                <span>Cart</span>
+                <div class="cart">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 6h15l-1.5 9h-11z" />
+                        <circle cx="9" cy="20" r="1.5" />
+                        <circle cx="18" cy="20" r="1.5" />
+                        <path d="M6 6L5 3H2" />
+                    </svg>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div>
+                <div class="small">FROM ROOT <span>TO SHINE</span></div>
+                <div class="big">KNOCK<br>OUT<br>FLAKES</div>
+            </div>
+
+            <div class="middle">
+                <img id="bottle" src="shampoo bottle.png">
+            </div>
+
+            <div class="right">
+                <h2>Journey into the<br><em>wonderful</em> world of<br>shampoo</h2>
+                <a class="btn" href="#">EXPLORE MORE</a><span class="arrow">↗</span>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const bottle = document.getElementById('bottle');
+        document.addEventListener('mousemove', e => {
+            const x = (e.clientX / window.innerWidth - .5) * 22;
+            const y = (.5 - e.clientY / window.innerHeight) * 16;
+            bottle.style.transform = `perspective(1200px) rotateX(${y}deg) rotateY(${x}deg) rotate(-18deg)`;
+        });
+    </script>
+</body>
+
+</html>
